@@ -40,6 +40,7 @@ public class EdgeEntity {
     Long ownerTrip;
 }
 
+@Data
 class TimeObject implements Serializable{
 
     @Field("hour")

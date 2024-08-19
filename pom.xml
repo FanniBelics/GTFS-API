@@ -61,6 +61,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.9.1</version> <!-- Check for the latest version -->
+        </dependency>
 
         <!-- Add other dependencies here, without specifying the version unless absolutely necessary -->
     </dependencies>
