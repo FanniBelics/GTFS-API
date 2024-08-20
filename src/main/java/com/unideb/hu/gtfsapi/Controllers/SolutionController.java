@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController()
-@RequestMapping("/api/{database}")
+@RequestMapping("/api/paths/{database}")
 public class SolutionController {
 
     @Autowired
