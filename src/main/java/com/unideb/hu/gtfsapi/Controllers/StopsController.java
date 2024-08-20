@@ -17,15 +17,21 @@ public class StopsController {
 
     @GetMapping("/find-by-name")
     public ResponseEntity<List<NodeEntity>> findByName(@PathVariable String database,
-                                                       @RequestParam String name)
-    {
+                                                       @RequestParam String name) {
         return service.findByName(database, name);
     }
 
     @GetMapping("/find-by-id")
     public ResponseEntity<NodeEntity> findById(@PathVariable String database,
-                                               @RequestParam long id)
-    {
+                                               @RequestParam long id) {
         return service.findByGtfsId(database, id);
     }
+
+    @PostMapping("/count")
+    public ResponseEntity<Long> countStops(@PathVariable String database,
+                                            @RequestBody String query)
+    {
+        return service.countStops(database, query);
+    }
+
 }

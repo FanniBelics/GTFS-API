@@ -113,4 +113,19 @@ public class StopsService {
 
         return ResponseEntity.status(HttpStatus.OK).body(node);
     }
+
+    public ResponseEntity<Long> countStops(String database, String jsonQuery) {
+        MongoTemplate template = configuration.mongoTemplate(database);
+
+        if(jsonQuery.isEmpty()){
+            jsonQuery = "{}";
+        }
+
+        BasicQuery query = new BasicQuery(jsonQuery);
+
+        long count = template.count(query, Collections.NODES.getName());
+
+        return ResponseEntity.status(HttpStatus.OK).body(count);
+
+    }
 }
